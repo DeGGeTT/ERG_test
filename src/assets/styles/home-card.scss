@@ -1,0 +1,68 @@
+.card {
+    background: #FFFFFF;
+    box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.2);
+    height: 420px;
+    padding: 20px;
+
+    &__title {
+        font-style: normal;
+        font-weight: 700;
+        font-size: 28px;
+        line-height: 130%;
+        text-transform: uppercase;
+        color: #F99D2E;
+        margin: 0;
+        padding: 0;
+    }
+    &__list{
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        margin-top: 66px;
+        &-item{
+            margin-bottom: 20px;
+            &--text{
+                font-style: normal;
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 130%;
+                display: flex;
+                align-items: flex-end;
+                color: #32373C;
+            }
+            &--value{
+                display: flex;
+                align-items: flex-end;
+                &-amount{
+                    font-style: normal;
+                    font-weight: 700;
+                    font-size: 28px;
+                    line-height: 130%;
+                    color: #32373C;
+                }
+                &-text{
+                    padding: 0 0 5px 5px;
+                }
+            }
+            &:last-child{
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+
+.grid-2{
+    display: grid;
+    grid-template-columns: 60% 40%;
+    width: 100%;
+    align-items: center;
+    column-gap: 40px;
+}
+
+.grid-1{
+    display: grid;
+    grid-template-columns: 85% 15%;
+    width: 100%;
+    align-items: center;
+    column-gap: 0;
+}

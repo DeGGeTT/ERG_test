@@ -1,0 +1,14 @@
+<div class="rates" *ngIf="conversionRates">
+    <div class="rates__item">
+        <span class="rates__item-name">USD</span>
+        <span class="rates__item-value">{{conversionRates.USD | convert}}</span>
+    </div>
+    <div class="rates__item">
+        <span class="rates__item-name">RUB</span>
+        <span class="rates__item-value">{{conversionRates.RUB | convert}}</span>
+    </div>
+    <div class="rates__item">
+        <span class="rates__item-name">EUR</span>
+        <span class="rates__item-value">{{conversionRates.EUR | convert}}</span>
+    </div>
+</div>

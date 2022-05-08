@@ -1,0 +1,33 @@
+.carousel{
+    &__actions {
+        & button {
+            display: flex;
+            align-items: center;
+            background: transparent;
+            border: none;
+        }
+        &-previous {
+            position: absolute;
+            left: 38px;
+            bottom: 66px;
+        }
+        &-next{
+            position: absolute;
+            right: 58px;
+            bottom: 66px;
+        }
+    }
+}
+
+:host::ng-deep {
+    .carousel-inner{
+        display: flex;
+        padding: 32px 20px 50px;
+    }
+    .carousel-indicators, .carousel-control{
+        display: none !important;
+    }
+    .carousel-item.active{
+        margin-right: 20px;
+    }
+  }
