@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { interval, Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
-import { Rate, RateItem } from '../../models/rate.interface';
+import { Rate, RateItem } from '../../models/rate.model';
 import { RatesApiService } from '../../services/home-rates.service';
 
 @Component({
