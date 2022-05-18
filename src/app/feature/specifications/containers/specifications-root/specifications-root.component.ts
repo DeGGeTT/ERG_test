@@ -102,7 +102,6 @@ export class SpecificationsRootComponent implements OnInit {
   }
 
   public CustomDeleteButton_Click(): void  {
-
   }
 
   public SaveButton_Click(): void  {

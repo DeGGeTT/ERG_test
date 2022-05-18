@@ -1,109 +1,111 @@
 <div class="specifications">
-    <form [formGroup]="specificationForm">
-        <div class="specifications__header">
-            <button (click)="SaveButton_Click()">Сохранить</button>
-        </div>
-        <div class="specifications__body row">
-            <div class="col-md-4">
-                <div class="specifications__body-item" *ngIf="model.BlShowInternalFields">
-                    <span class="specifications__body-item--label">Статус спецификации</span>
-                    <span class="specifications__body-item--value">{{specif.STATUS_TEXT}}</span>
-                </div>
-                <div class="specifications__body-item">
-                    <span class="specifications__body-item--label">Номер</span>
-                    <span class="specifications__body-item--value">{{specif.NUM_SPECIFIC}}</span>
-                </div>
-                <div class="specifications__body-item">
-                    <span class="specifications__body-item--label">Исполнитель</span>
-                    <span class="specifications__body-item--value">{{model.SpecifExecTxt}}</span>
-                </div>
-                <div class="specifications__body-item">
-                    <span class="specifications__body-item--label">Дата создания</span>
-                    <span class="specifications__body-item--value">{{specif.CREATE_DATE}}</span>
-                </div>
-                <div class="specifications__body-item">
-                    <span class="specifications__body-item--label">Номер SAP</span>
-                    <span class="specifications__body-item--value">{{specif.LOT_NUM_SAP}}</span>
-                </div>
-                <div class="specifications__body-item" *ngIf="false">
-                    <span class="specifications__body-item--label">Необходим анонс закупки</span>
-                </div>
+    <div class="specifications__container">
+        <form [formGroup]="specificationForm">
+            <div class="specifications__header">
+                <button (click)="SaveButton_Click()">Сохранить</button>
             </div>
-            <div class="col-md-4">
-                <form [formGroup]="Specif">
-                    <div class="specifications__body-item">
-                        <span class="specifications__body-item--label">Основание для спецификации</span>
-                        <span class="specifications__body-item--value">{{specif.ORIGIN_TYPE_TEXT}}</span>
+            <div class="specifications__body row">
+                <div class="col-md-4">
+                    <div class="specifications__body-item" *ngIf="model.BlShowInternalFields">
+                        <span class="specifications__body-item--label">Статус спецификации</span>
+                        <span class="specifications__body-item--value">{{specif.STATUS_TEXT}}</span>
                     </div>
                     <div class="specifications__body-item">
-                        <span class="specifications__body-item--label">Основная категория ТРУ</span>
-                        <span class="specifications__body-item--value"></span>
+                        <span class="specifications__body-item--label">Номер</span>
+                        <span class="specifications__body-item--value">{{specif.NUM_SPECIFIC}}</span>
                     </div>
                     <div class="specifications__body-item">
-                        <span class="specifications__body-item--label">Валюта*</span>
-                        <ng-container *ngIf="model?.IsGPZControlsVisible; else selectCurrency">
-                            <span class="specifications__body-item--value">Тенге (казахстанский)</span>
-                        </ng-container>
-                        <ng-template #selectCurrency>
-                            <select class="specifications__body-item--value" formControlName="REF_CURRENCY_ID">
-                                <option value="">Не выбрано</option>
-                                <option *ngFor="let curency of currencies" [value]="curency.Id"> {{curency.Name}}
-                                </option>
-                            </select>
-                        </ng-template>
+                        <span class="specifications__body-item--label">Исполнитель</span>
+                        <span class="specifications__body-item--value">{{model.SpecifExecTxt}}</span>
                     </div>
-                    <div class="specifications__body-product row">
-                        <div class="col-md-4">
-                            <input type="checkbox" name="product" id="product">
-                            <label class="specifications__body-product--label" style="margin-right: 40px;" for="product">Товар</label>
-                            <span class="specifications__body-product--label">0%</span>
-                        </div>
-                        <div class="col-md-4">
-                            <input type="checkbox" name="service" id="service">
-                            <label class="specifications__body-product--label"  style="margin-right: 40px;" for="service">Работа/услуга</label>
-                            <span class="specifications__body-product--label">0%</span>
-                        </div>
+                    <div class="specifications__body-item">
+                        <span class="specifications__body-item--label">Дата создания</span>
+                        <span class="specifications__body-item--value">{{specif.CREATE_DATE}}</span>
                     </div>
-                </form>
-                    <div class="specifications__body-contract">
-                        <label class="specifications__body-contract--label" for="contract ">По рамочному договору</label>
-                        <input type="checkbox" formControlName="IsFrameAgreement" name="contract" id="contract ">
+                    <div class="specifications__body-item">
+                        <span class="specifications__body-item--label">Номер SAP</span>
+                        <span class="specifications__body-item--value">{{specif.LOT_NUM_SAP}}</span>
                     </div>
-            </div>
-            <div class=" col-md-4">
-                <form [formGroup]="Specif">
-                <div class="specifications__body-info" *ngIf="false">
-                    <span class="specifications__body-item--label">Регламентация закупа</span>
-                    <select class="specifications__body-item--value" formControlName="PURCHASE_MANNER_ID">
-                        <option value="">Не выбрано</option>
-                    </select>
+                    <div class="specifications__body-item" *ngIf="false">
+                        <span class="specifications__body-item--label">Необходим анонс закупки</span>
+                    </div>
                 </div>
-                <div class="specifications__body-info">
-                    <div class="specifications__body-info--item">
-                        <span class="specifications__body-info--label">Планируемый способ закупа</span>
-                        <select class="specifications__body-info--value" formControlName="PRE_PURCHASE_MANNER_ID">
+                <div class="col-md-4">
+                    <form [formGroup]="Specif">
+                        <div class="specifications__body-item">
+                            <span class="specifications__body-item--label">Основание для спецификации</span>
+                            <span class="specifications__body-item--value">{{specif.ORIGIN_TYPE_TEXT}}</span>
+                        </div>
+                        <div class="specifications__body-item">
+                            <span class="specifications__body-item--label">Основная категория ТРУ</span>
+                            <span class="specifications__body-item--value"></span>
+                        </div>
+                        <div class="specifications__body-item">
+                            <span class="specifications__body-item--label">Валюта*</span>
+                            <ng-container *ngIf="model?.IsGPZControlsVisible; else selectCurrency">
+                                <span class="specifications__body-item--value">Тенге (казахстанский)</span>
+                            </ng-container>
+                            <ng-template #selectCurrency>
+                                <select class="specifications__body-item--value" formControlName="REF_CURRENCY_ID">
+                                    <option value="">Не выбрано</option>
+                                    <option *ngFor="let curency of currencies" [value]="curency.Id"> {{curency.Name}}
+                                    </option>
+                                </select>
+                            </ng-template>
+                        </div>
+                        <div class="specifications__body-product row">
+                            <div class="col-md-4">
+                                <input type="checkbox" name="product" id="product">
+                                <label class="specifications__body-product--label" style="margin-right: 40px;" for="product">Товар</label>
+                                <span class="specifications__body-product--label">0%</span>
+                            </div>
+                            <div class="col-md-4">
+                                <input type="checkbox" name="service" id="service">
+                                <label class="specifications__body-product--label"  style="margin-right: 40px;" for="service">Работа/услуга</label>
+                                <span class="specifications__body-product--label">0%</span>
+                            </div>
+                        </div>
+                    </form>
+                        <div class="specifications__body-contract">
+                            <label class="specifications__body-contract--label" for="contract ">По рамочному договору</label>
+                            <input type="checkbox" formControlName="IsFrameAgreement" name="contract" id="contract ">
+                        </div>
+                </div>
+                <div class=" col-md-4">
+                    <form [formGroup]="Specif">
+                    <div class="specifications__body-info" *ngIf="false">
+                        <span class="specifications__body-item--label">Регламентация закупа</span>
+                        <select class="specifications__body-item--value" formControlName="PURCHASE_MANNER_ID">
                             <option value="">Не выбрано</option>
                         </select>
                     </div>
-                    <div class="specifications__body-info--item">
-                        <label  for="emergency ">Аварийный закуп</label>
-                        <input type="checkbox" formControlName="IS_EMERGENCY_PURCHASE" name="emergency" id="emergency ">
+                    <div class="specifications__body-info">
+                        <div class="specifications__body-info--item">
+                            <span class="specifications__body-info--label">Планируемый способ закупа</span>
+                            <select class="specifications__body-info--value" formControlName="PRE_PURCHASE_MANNER_ID">
+                                <option value="">Не выбрано</option>
+                            </select>
+                        </div>
+                        <div class="specifications__body-info--item">
+                            <label  for="emergency ">Аварийный закуп</label>
+                            <input type="checkbox" formControlName="IS_EMERGENCY_PURCHASE" name="emergency" id="emergency ">
+                        </div>
                     </div>
+                    <div class="specifications__body-info">
+                        <p>Перед объявлением закупа согласно Регламенту закупок необходимо проверить наименования товаров на отсутствие в них: <br>
+                            - фирменных наименований, <br>
+                            - патентов, <br>
+                            - наименований места происхождения/производителей, <br>
+                            - других характеристик ТМЦ, определяющих их принадлежность к определенному поставщику/производителю,  <br>
+                            (за исключением товаров, необходимых для ремонта установленного оборудования).
+                        </p>
+                    </div>
+                    <div class="specifications__body-info">
+                        <p>Для исправления наименования товаров обратитесь на <a href="mailto:servicedesk@erg.kz?subject=Портал закупок: изменение наименования для торгов">cервис-деск.</a></p>
+                    </div>
+                    </form>
                 </div>
-                <div class="specifications__body-info">
-                    <p>Перед объявлением закупа согласно Регламенту закупок необходимо проверить наименования товаров на отсутствие в них: <br>
-                        - фирменных наименований, <br>
-                        - патентов, <br>
-                        - наименований места происхождения/производителей, <br>
-                        - других характеристик ТМЦ, определяющих их принадлежность к определенному поставщику/производителю,  <br>
-                        (за исключением товаров, необходимых для ремонта установленного оборудования).
-                    </p>
-                </div>
-                <div class="specifications__body-info">
-                    <p>Для исправления наименования товаров обратитесь на <a href="mailto:servicedesk@erg.kz?subject=Портал закупок: изменение наименования для торгов">cервис-деск.</a></p>
-                </div>
-                </form>
             </div>
-        </div>
-    </form>
+        </form>
+    </div>
 </div>
