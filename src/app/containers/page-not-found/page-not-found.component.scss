@@ -37,6 +37,7 @@ $color-wood-2:    #410A09;
   font-size: 30em;
   text-align: center;
   top: 40%;
+  z-index: -10;
 }
 .container {
   @include centered;

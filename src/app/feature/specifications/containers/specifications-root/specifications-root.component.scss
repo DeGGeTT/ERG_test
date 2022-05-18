@@ -1,0 +1,71 @@
+.specifications{
+    min-height: calc(100vh - 295px);
+    padding: 2px;
+    &__header{
+        text-align: right;
+        border: 1px solid #939B9E;
+        background: #C4CCCF;
+        border-radius: 2px;
+        padding: 0 3px;
+        margin: 0 2px;
+        & button {
+            font-size: 11px;
+            padding: 8px 0 ;
+            margin: 5px 0;
+            min-height: 24px;
+            min-width: 80px;
+        }
+    }
+    &__body{
+        &-item{
+            display: grid;
+            grid-template-columns: 40% 60%;
+            width: calc(100% - 20px);
+            align-items: top;
+            grid-row-gap: 20px;
+            row-gap: 20px;
+            grid-column-gap: 20px;
+            column-gap: 20px;
+            font-size: 11px;
+            color: Black;
+            &--label{
+                font-weight: bold;
+                margin: 3px 2px 5px 2px;
+            }
+            &--value{
+                width: 100%;
+                margin: 3px 2px 5px 2px;
+            }
+        }
+        &-product, &-contract{
+            font-size: 11px;
+            color: Black;
+            &--label{
+                font-weight: bold;
+                margin: 3px 2px 5px 2px;
+            }
+        }
+        &-info{
+            display: flex;
+            font-size: 11px;
+            color: Black;
+            &--item{
+                display: flex;
+                align-items: center;
+                margin-right: 4px;
+            }
+            &--label{
+                margin: 3px 2px 5px 2px;
+                & select{
+                    min-width: 170px;
+                }
+            }
+            & p {
+                color: Blue;
+                & a {
+                    color: black;
+                }
+            }
+        }
+    }
+}
